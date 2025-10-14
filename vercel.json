@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/aides",       "destination": "/index.html" },
+    { "source": "/formulaires", "destination": "/index.html" }
+  ]
+}
