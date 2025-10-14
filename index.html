@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FRANCE ISOLATION — Isolation Thermique Extérieure, Aides & Étude Gratuite</title>
+    <meta name="description" content="Isolation Thermique par l'Extérieur (ITE) : réduisez vos factures, gagnez en confort et valorisez votre bien. Demandez votre étude gratuite et simulez vos aides." />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17639309386"></script>
+    <script>
+        /* gtag and both Ads IDs */
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-17639309386');  /* Your existing tag */
+        gtag('config', 'AW-17642364073');  /* Account for the conversion below */
+
+        /* Google Ads conversion helper */
+        function gtag_report_conversion(url) {
+            var callback = function () { if (typeof url !== 'undefined') window.location = url; };
+            gtag('event', 'conversion', {
+                send_to: 'AW-17642364073/LfY0CML8pK0bEKm5xNxB',
+                value: 1.0,
+                currency: 'EUR',
+                event_callback: callback
+            });
+            return false;
+        }
+    </script>
+
+    <style>
+        :root{
+            --bg:#f5f4ef; --surface:#ffffff; --card:#f3f2ea; --border:#d9d6c9;
+            --text:#243127; --muted:#5e6f63; --brand:#618f72; --brand-dark:#3d7052;
+            --accent:#d9b97a; --radius:16px; --shadow:0 14px 32px rgba(0,0,0,.07);
+            --container:1120px; --error:#b42318; --ok:#1b7a50;
+        }
+        *,*::before,*::after{box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{margin:0;background:radial-gradient(circle at 10% 10%,#ffffff 0%,#f5f4ef 55%,#ece9df 100%);color:var(--text);font:16px/1.6 "Segoe UI", Roboto, Arial, sans-serif}
+        img{display:block;max-width:100%;height:auto}
+        a{color:inherit;text-decoration:none}
+        button{font:inherit}
+        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+        .container{width:min(100%,var(--container));margin-inline:auto;padding:0 clamp(16px,4vw,32px)}
+        .section{padding:clamp(48px,8vw,96px) 0}
+        h1,h2,h3,h4{font-weight:700;color:var(--text);margin:0}
+        h2{font-size:clamp(1.8rem,2vw + 1rem,2.6rem);text-align:center;margin-bottom:18px}
+        p{margin:0}
+
+        /* Header */
+        .topbar{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.92);backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid rgba(217,214,201,.55);transition:box-shadow .3s ease, border-color .3s ease}
+        .topbar.scrolled{box-shadow:0 10px 28px rgba(0,0,0,.08);border-color:rgba(217,214,201,.85)}
+        .nav{display:flex;align-items:center;gap:clamp(10px,1.8vw,26px);justify-content:space-between;padding:clamp(6px,.9vw,12px) 0}
+        .brand{display:flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:.08em}
+        .brand img{height:26px;width:auto;border-radius:8px;box-shadow:0 6px 16px rgba(0,0,0,.08)}
+        .brand-text{display:flex;flex-direction:column;gap:0}
+        .brand-name{font-weight:700;font-size:.86rem;color:var(--text)}
+        .brand-tagline{font-weight:600;font-size:.6rem;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+        .nav-toggle{display:none;background:var(--surface);border:1px solid var(--border);border-radius:11px;padding:.45rem .75rem;font-weight:600;color:var(--brand-dark);cursor:pointer;align-items:center;gap:8px;box-shadow:0 6px 16px rgba(0,0,0,.06)}
+        .links{display:flex;align-items:center;gap:clamp(10px,1.4vw,20px);margin-left:auto}
+        .links a{color:var(--muted);font-weight:600;padding:.28rem 0;position:relative;letter-spacing:.05em;text-transform:uppercase;font-size:.74rem}
+        .links a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:linear-gradient(120deg,var(--brand),var(--brand-dark));transform:scaleX(0);transform-origin:center;transition:transform .2s}
+        .links a:hover::after,.links a:focus-visible::after{transform:scaleX(1)}
+        .links a:hover,.links a:focus-visible{color:var(--brand-dark)}
+        .nav-contact{display:flex;align-items:center;gap:12px;margin-left:clamp(12px,2vw,28px);white-space:nowrap}
+        .nav-contact .nav-phone{display:inline-flex;align-items:center;gap:6px;color:var(--brand-dark);font-weight:600;font-size:.78rem}
+        .nav-cta{white-space:nowrap}
+        @media(max-width:960px){
+            .nav{flex-wrap:wrap;justify-content:flex-start}
+            .nav-toggle{display:inline-flex;margin-left:auto}
+            .links{order:3;width:100%;flex-direction:column;align-items:flex-start;background:var(--surface);border-radius:16px;border:1px solid var(--border);padding:18px 20px;display:none;gap:12px;margin-left:0;box-shadow:var(--shadow)}
+            .links.open{display:flex}
+            .links a{width:100%}
+            .links a::after{display:none}
+            .nav-contact{order:2;width:100%;justify-content:space-between;margin:12px 0 0;gap:10px}
+            .nav-contact .nav-phone{color:var(--muted)}
+            .nav-cta{order:2;margin-left:auto}
+        }
+        @media(max-width:640px){
+            .nav{gap:10px}
+            .nav-contact{flex-direction:column;align-items:flex-start;gap:6px}
+            .nav-cta{width:100%;order:3;margin:6px 0 0}
+        }
+
+        /* Hero */
+        .hero{background:var(--surface);border:1px solid rgba(217,214,201,.7);border-radius:28px;box-shadow:var(--shadow);margin-top:clamp(20px,4vw,36px);position:relative;overflow:hidden}
+        .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 10% 20%,rgba(97,143,114,.1),transparent 52%);pointer-events:none}
+        .hero-inner{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(22px,4vw,48px);align-items:center;padding:clamp(32px,5vw,48px)}
+        @media(max-width:900px){.hero-inner{grid-template-columns:1fr}.hero-img{order:-1}}
+        .kicker{color:var(--brand-dark);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.9rem}
+        h1{font-size:clamp(2rem,2.4vw + 1.4rem,3rem);line-height:1.15;margin:12px 0 10px}
+        .lead{color:var(--muted);margin:0;font-size:1.08rem}
+        .hero-img img{width:100%;max-width:460px;border-radius:20px;box-shadow:0 18px 38px rgba(0,0,0,.12);margin-inline:auto;transition:transform .3s}
+        .hero-img a:focus img,.hero-img a:hover img{transform:translateY(-4px)}
+
+        .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}
+        .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.85rem 1.35rem;border-radius:14px;font-weight:700;border:0;color:#fff;background:linear-gradient(135deg,var(--brand),var(--brand-dark));box-shadow:0 12px 26px rgba(61,112,82,.22);cursor:pointer;transition:transform .2s, box-shadow .2s}
+        .btn.secondary{background:#fff;color:var(--brand);border:1px solid var(--border);box-shadow:none}
+        .btn.ghost{background:#fff;color:var(--brand-dark);border:1px solid var(--border)}
+        .btn:hover,.btn:focus-visible{transform:translateY(-2px);box-shadow:0 12px 20px rgba(0,0,0,.12)}
+        .btn.secondary:hover,.btn.secondary:focus-visible{box-shadow:var(--shadow)}
+        .btn[disabled]{opacity:.7;cursor:not-allowed;transform:none;box-shadow:none}
+        .btn.nav-cta{padding:.7rem 1.1rem;border-radius:12px;font-size:.78rem;box-shadow:0 10px 20px rgba(61,112,82,.18)}
+        .badges{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;color:var(--brand-dark);font-weight:600}
+        .badge-pill{background:var(--card);padding:.35rem .8rem;border-radius:999px;border:1px solid var(--border)}
+
+        .hero-meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:28px}
+        .hero-meta .meta-card{flex:1 1 180px;min-width:160px;background:var(--surface);border:1px solid rgba(217,214,201,.8);border-radius:18px;padding:18px;box-shadow:0 18px 34px rgba(0,0,0,.05);display:grid;gap:6px}
+        .hero-meta strong{font-size:1.6rem;color:var(--brand-dark)}
+        .hero-meta span{color:var(--muted);font-weight:600;font-size:.9rem}
+
+        .trust-strip{margin:40px auto 0;padding:22px 26px;border-radius:18px;border:1px solid rgba(217,214,201,.6);background:linear-gradient(120deg,rgba(255,255,255,.8),rgba(242,240,233,.8));display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;color:var(--muted);font-weight:600}
+        .trust-strip span{display:flex;align-items:center;gap:10px}
+        .trust-logos{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+        .trust-logos img,.trust-logos span{height:40px;display:inline-flex;align-items:center;justify-content:center;padding:6px 18px;border-radius:999px;border:1px solid rgba(217,214,201,.6);background:#fff;color:var(--brand-dark);font-weight:700;font-size:.85rem;letter-spacing:.08em}
+        @media(max-width:720px){.trust-strip{flex-direction:column;align-items:flex-start}}
+
+        /* Advantages */
+        .advantages{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:26px}
+        .adv{background:linear-gradient(160deg,#fff,#f7f8f4);border:1px solid var(--border);border-radius:18px;padding:22px;text-align:center;box-shadow:var(--shadow);transition:transform .25s, box-shadow .25s}
+        .adv:hover{transform:translateY(-6px);box-shadow:0 14px 28px rgba(0,0,0,.09)}
+        .adv .ico{height:64px;width:64px;margin:0 auto 12px;display:grid;place-items:center;border-radius:50%;background:var(--brand);color:#fff;font-size:1.8rem}
+        .adv h3{margin:6px 0 8px;font-size:1.12rem;color:var(--brand-dark)}
+        .adv p{margin:0;color:var(--muted);font-size:.95rem}
+
+        /* Aides */
+        .section.light{background:linear-gradient(180deg,rgba(255,255,255,.76),rgba(247,246,242,.95))}
+        .aides{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:26px}
+        .aide{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:22px;text-align:left;box-shadow:var(--shadow);transition:transform .2s}
+        .aide:hover{transform:translateY(-4px)}
+        .aide .icon{font-size:1.9rem;margin-bottom:12px;color:var(--brand-dark)}
+        .aide strong{color:var(--brand-dark);display:block;font-size:1.1rem}
+        .aide p{margin:8px 0 0;color:var(--muted);font-size:.96rem}
+
+        /* Solutions */
+        .solutions-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:30px}
+        .solution-card{background:linear-gradient(150deg,#fff,rgba(240,242,235,.9));border:1px solid rgba(217,214,201,.85);border-radius:22px;padding:24px;box-shadow:var(--shadow);display:grid;gap:14px;position:relative;overflow:hidden}
+        .solution-card::after{content:"";position:absolute;inset:18px;border-radius:18px;border:1px solid rgba(255,255,255,.4);pointer-events:none}
+        .solution-card h3{margin:0;color:var(--brand-dark);font-size:1.1rem}
+        .solution-card p{color:var(--muted);font-weight:500}
+        .solution-points{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+        .solution-points li{display:flex;gap:8px;align-items:flex-start;color:var(--muted);font-size:.92rem}
+        .solution-points li::before{content:"✔";color:var(--brand-dark);font-weight:700;font-size:.9rem;margin-top:2px}
+        .solution-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--brand-dark);font-weight:600;font-size:.9rem;flex-wrap:wrap}
+        .solution-footer span{display:inline-flex;align-items:center;gap:6px}
+        .solution-note{margin-top:30px;background:linear-gradient(120deg,rgba(97,143,114,.12),rgba(97,143,114,.04));border:1px solid rgba(97,143,114,.2);border-radius:20px;padding:24px;display:grid;gap:8px;color:var(--brand-dark);font-weight:600;text-align:center}
+        .solution-note strong{font-size:1.02rem}
+        .solution-note p{margin:0;color:var(--muted);font-weight:500}
+
+        /* Certifications */
+        .cert-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;margin-top:32px;align-items:start}
+        .cert-intro{background:var(--surface);border:1px solid rgba(217,214,201,.8);border-radius:22px;padding:28px;box-shadow:var(--shadow);display:grid;gap:16px}
+        .cert-intro h3{margin:0;color:var(--brand-dark)}
+        .cert-intro ul{margin:0;padding-left:20px;color:var(--muted);display:grid;gap:8px;font-weight:500}
+        .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+        .cert-card{background:linear-gradient(130deg,#fff,rgba(242,240,233,.7));border:1px solid rgba(217,214,201,.8);border-radius:20px;padding:24px;box-shadow:var(--shadow);display:grid;gap:8px}
+        .cert-card strong{color:var(--brand-dark);font-size:1.05rem}
+
+        /* Engagements */
+        .engagements-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;margin-top:34px}
+        .eng-card{background:linear-gradient(140deg,#fff,rgba(242,240,233,.65));border:1px solid rgba(217,214,201,.8);border-radius:22px;padding:26px;box-shadow:var(--shadow);display:grid;gap:12px}
+        .eng-card .icon{font-size:1.8rem;color:var(--brand-dark)}
+        .eng-card h3{margin:0;color:var(--brand-dark);font-size:1.08rem}
+        .eng-card p{margin:0;color:var(--muted)}
+        .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-top:32px}
+        .metric{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;text-align:center;box-shadow:var(--shadow)}
+        .metric strong{display:block;font-size:1.8rem;color:var(--brand-dark)}
+        .metric span{display:block;color:var(--muted);font-weight:600}
+        .testimonial{margin-top:40px;background:linear-gradient(130deg,#fff,rgba(242,240,233,.72));border:1px solid rgba(217,214,201,.7);border-radius:24px;padding:32px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+        .testimonial::before{content:"\201C";font-size:4rem;color:rgba(110,162,122,.2);position:absolute;top:-12px;left:22px;font-family:serif}
+        .testimonial blockquote{margin:0;color:var(--muted);font-size:1.05rem}
+        .testimonial cite{display:block;margin-top:14px;font-weight:700;color:var(--brand-dark);font-style:normal}
+
+        /* Before/after */
+        .compare-wrap{display:grid;gap:32px;align-items:center;margin-top:34px}
+        @media(min-width:960px){.compare-wrap{grid-template-columns:1.1fr .9fr}}
+        .compare-card{background:var(--surface);border-radius:24px;border:1px solid rgba(217,214,201,.9);box-shadow:var(--shadow);overflow:hidden;position:relative}
+        .compare{position:relative;aspect-ratio:16/9;overflow:hidden}
+        .compare img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+        .compare .after{clip-path:inset(0 0 0 0)}
+        .compare .before{clip-path:inset(0 50% 0 0)}
+        .compare-handle{position:absolute;top:0;bottom:0;left:50%;width:4px;background:rgba(255,255,255,.7);box-shadow:0 0 0 1px rgba(0,0,0,.1);cursor:ew-resize;display:flex;align-items:center;justify-content:center}
+        .compare-handle::after{content:"";width:32px;height:32px;border-radius:50%;background:var(--brand);border:2px solid #fff;box-shadow:0 6px 18px rgba(0,0,0,.2)}
+        .compare-buttons{display:flex;gap:12px;margin:18px auto 22px;justify-content:center;flex-wrap:wrap}
+        .compare-buttons button{padding:.55rem 1rem;border-radius:999px;border:1px solid var(--border);background:var(--card);cursor:pointer;font-weight:600;color:var(--brand-dark)}
+        .compare-buttons button.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+        .compare-caption{padding:24px;display:grid;gap:10px}
+        .compare-caption p{color:var(--muted)}
+
+        /* Méthode */
+        .method-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:30px}
+        .step-card{background:var(--surface);border:1px solid rgba(217,214,201,.85);border-radius:20px;box-shadow:var(--shadow);padding:24px;position:relative}
+        .step-card strong{display:inline-flex;width:42px;height:42px;border-radius:50%;align-items:center;justify-content:center;background:var(--brand);color:#fff;margin-bottom:12px}
+        .step-card h3{margin-bottom:10px;color:var(--brand-dark)}
+        .step-card p{color:var(--muted)}
+
+        /* Galerie */
+        .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:32px}
+        .gallery-item{position:relative;border-radius:20px;overflow:hidden;cursor:pointer;box-shadow:var(--shadow);border:1px solid rgba(217,214,201,.9);background:#000}
+        .gallery-item img{transition:transform .4s ease;filter:brightness(.92)}
+        .gallery-item:hover img,.gallery-item:focus-within img{transform:scale(1.06)}
+        .gallery-caption{position:absolute;left:0;right:0;bottom:0;padding:14px;color:#fff;background:linear-gradient(0deg,rgba(0,0,0,.55),transparent)}
+        .lightbox{position:fixed;inset:0;background:rgba(20,25,21,.85);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s;z-index:50}
+        .lightbox.open{opacity:1;visibility:visible}
+        .lightbox figure{max-width:min(90vw,900px);margin:0;position:relative}
+        .lightbox img{width:100%;border-radius:18px;box-shadow:0 18px 42px rgba(0,0,0,.4)}
+        .lightbox figcaption{margin-top:12px;color:#fff;text-align:center;font-size:1rem}
+        .lightbox button{position:absolute;top:-14px;right:-14px;background:#fff;color:var(--text);border-radius:50%;width:42px;height:42px;border:0;font-weight:700;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.4)}
+
+        /* FAQ */
+        .faq-list{max-width:820px;margin:28px auto 0;display:grid;gap:12px}
+        details{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 20px;box-shadow:var(--shadow)}
+        summary{cursor:pointer;font-weight:600;color:var(--brand-dark);display:flex;align-items:center;justify-content:space-between;gap:12px;list-style:none}
+        summary::-webkit-details-marker{display:none}
+        details p{color:var(--muted);margin-top:12px}
+
+        /* Form 2 étapes */
+        .formwrap{background:var(--surface);border:1px solid rgba(217,214,201,.85);border-radius:24px;box-shadow:var(--shadow)}
+        .form-header{padding:28px 22px 12px;text-align:center}
+        .form-header .badge{display:inline-block;background:var(--card);border:1px solid var(--border);color:var(--brand-dark);padding:.4rem .75rem;border-radius:999px;font-weight:700;font-size:.85rem}
+        .form-shell{padding:22px}
+        form#contactForm{display:grid;gap:18px;max-width:760px;margin:auto}
+        .stepper{display:flex;gap:12px;justify-content:center;margin:4px 0 18px}
+        .bubble{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--border);background:#fff;color:var(--muted);font-weight:700}
+        .bubble.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+        .bubble.done{background:var(--brand-dark);color:#fff;border-color:var(--brand-dark)}
+        .step-title{display:none}
+        .form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+        @media(max-width:760px){.form-grid{grid-template-columns:1fr}}
+        .field{display:flex;flex-direction:column;gap:6px}
+        .field label{color:var(--muted);font-weight:600}
+        .req{color:#c0392b;margin-left:4px}
+        .input{background:#fff;border:1px solid var(--border);padding:.9rem 1rem;border-radius:12px;transition:border-color .15s, box-shadow .15s;font-size:1rem}
+        .input:focus{outline:none;border-color:#7eae88;box-shadow:0 0 0 4px rgba(110,162,122,.18)}
+        .input::placeholder{color:#9aa3a0}
+        .hint{font-size:.85rem;color:var(--muted)}
+        .error{font-size:.85rem;color:var(--error);display:none}
+        .invalid .error{display:block}
+        .invalid .input{border-color:var(--error);box-shadow:0 0 0 3px rgba(180,35,24,.08)}
+        .checkbox-card{display:flex;gap:.65rem;align-items:flex-start;background:var(--card);border:1px solid var(--border);padding:.85rem 1rem;border-radius:14px}
+        .checkbox-card label{flex:1}
+        .full{grid-column:1/-1}
+        .actions{display:flex;gap:12px;align-items:center;justify-content:flex-end;margin-top:8px}
+        @media(max-width:760px){.actions{justify-content:stretch}}
+        .success{display:none;max-width:760px;margin:0 auto 16px;background:#f0f6f2;border:1px solid #cfe3d2;border-radius:16px;padding:20px}
+        .success.show{display:block}
+        .success h3{margin:0 0 6px;color:var(--ok)}
+        .success p{margin:0;color:#2c4638}
+
+        footer{padding:36px 0 42px;color:var(--muted)}
+        footer a{color:var(--brand-dark)}
+    </style>
+</head>
+<body>
+<header class="topbar" data-topbar>
+    <div class="container nav">
+        <div class="brand">
+            <img src="images/france-isolation-logo.jpg" alt="FRANCE ISOLATION" />
+            <div class="brand-text">
+                <span class="brand-name">France Isolation</span>
+                <span class="brand-tagline">Isolation thermique extérieure</span>
+            </div>
+        </div>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primaryNav">
+            <span aria-hidden="true">☰</span>
+            <span class="sr-only">Menu</span>
+        </button>
+        <nav class="links" id="primaryNav" aria-label="Navigation principale">
+            <a href="/" data-route>Accueil</a>
+            <a href="/aides" data-route>Aides</a>
+            <a href="/solutions" data-route>Solutions ITE</a>
+            <a href="/certifications" data-route>Certifications</a>
+            <a href="/engagements" data-route>Expertise</a>
+            <a href="/realisations" data-route>Réalisations</a>
+            <a href="/faq" data-route>FAQ</a>
+        </nav>
+        <div class="nav-contact">
+            <a class="nav-phone" href="tel:+33184801245"><span aria-hidden="true">📞</span> 01 84 80 12 45</a>
+            <a href="/formulaires" data-route class="btn nav-cta">Demander mon étude</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero -->
+    <section class="section hero" id="accueil" aria-label="Isolation par l'extérieur">
+        <div class="hero-inner container">
+            <div class="hero-text">
+                <p class="kicker">Isolation Thermique par l’Extérieur</p>
+                <h1>Réduisez vos factures, gagnez en confort & rénovez votre façade.</h1>
+                <p class="lead">ITE : façade rénovée, confort immédiat et subventions selon votre profil. Nous gérons votre dossier de A à Z.</p>
+
+                <div class="badges" aria-label="Engagements France Isolation">
+                    <span class="badge-pill">Entreprise certifiée RGE</span>
+                    <span class="badge-pill">Accompagnement complet</span>
+                    <span class="badge-pill">Étude 100% gratuite</span>
+                </div>
+
+                <div class="cta" role="group" aria-label="Appels à l'action">
+                    <a href="/formulaires" data-route class="btn">Simuler mes aides</a>
+                    <a href="/aides" data-route class="btn secondary">Voir les aides disponibles</a>
+                </div>
+
+                <div class="advantages" aria-label="Avantages de l’ITE">
+                    <article class="adv"><div class="ico" aria-hidden="true">💡</div><h3>Économies d’énergie</h3><p>Diminuez durablement vos factures de chauffage et climatisation.</p></article>
+                    <article class="adv"><div class="ico" aria-hidden="true">🔥</div><h3>Confort thermique</h3><p>Température homogène, murs chauds et été plus frais.</p></article>
+                    <article class="adv"><div class="ico" aria-hidden="true">🧱</div><h3>Façade rénovée</h3><p>Nouvel aspect, finitions soignées et protection des murs.</p></article>
+                    <article class="adv"><div class="ico" aria-hidden="true">📈</div><h3>Valorisation</h3><p>Améliorez le DPE et la valeur de votre bien immobilier.</p></article>
+                </div>
+
+                <div class="hero-meta" role="list" aria-label="Chiffres clés France Isolation">
+                    <div class="meta-card" role="listitem"><strong>12 ans</strong><span>d’expertise ITE certifiée</span></div>
+                    <div class="meta-card" role="listitem"><strong>2 500+</strong><span>façades isolées et rénovées</span></div>
+                    <div class="meta-card" role="listitem"><strong>4,8 / 5</strong><span>note moyenne clients vérifiée</span></div>
+                </div>
+            </div>
+
+            <!-- Image cliquable vers le formulaire -->
+            <div class="hero-img">
+                <a href="/formulaires" data-route aria-label="Aller au formulaire d'étude gratuite">
+                    <img src="images/promo-froid.jpg" alt="Le froid arrive : isolez et bénéficiez d'aides" loading="lazy" decoding="async" />
+                </a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="trust-strip" aria-label="Labels et certifications">
+                <span><span aria-hidden="true">✅</span> Entreprise RGE Qualibat & Garantie Décennale</span>
+                <div class="trust-logos"><span>QUALIBAT</span><span>CEE</span><span>MaPrimeRénov’</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aides -->
+    <section class="section light" id="aides" aria-label="Aides disponibles">
+        <div class="container">
+            <h2>Financer votre ITE avec des aides cumulables</h2>
+            <p class="lead" style="text-align:center;color:var(--muted);max-width:720px;margin:0 auto">Nos experts montent votre dossier pour maximiser les subventions et réduire votre reste à charge.</p>
+            <div class="aides" role="list">
+                <article class="aide" role="listitem"><div class="icon" aria-hidden="true">💶</div><strong>MaPrimeRénov’</strong><p>Prime nationale calculée selon vos revenus et le gain énergétique obtenu.</p></article>
+                <article class="aide" role="listitem"><div class="icon" aria-hidden="true">🏠</div><strong>Programme Sérénité</strong><p>Accompagnement de l’ANAH pour les ménages modestes et très modestes.</p></article>
+                <article class="aide" role="listitem"><div class="icon" aria-hidden="true">⚡</div><strong>Certificats d’Économies d’Énergie (CEE)</strong><p>Primes financées par les fournisseurs d’énergie, sans conditions de revenus.</p></article>
+                <article class="aide" role="listitem"><div class="icon" aria-hidden="true">📍</div><strong>Aides régionales & locales</strong><p>Compléments proposés par votre région, département ou collectivité.</p></article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions ITE -->
+    <section class="section" id="solutions" aria-label="Solutions d'isolation par l'extérieur">
+        <div class="container">
+            <h2>Des solutions ITE adaptées à votre façade</h2>
+            <p class="lead" style="text-align:center;color:var(--muted);max-width:780px;margin:0 auto">Nous sélectionnons les isolants et finitions les plus pertinents selon votre bâti, votre zone climatique et l’esthétique recherchée.</p>
+            <div class="solutions-grid" role="list">
+                <article class="solution-card" role="listitem">
+                    <h3>Polystyrène graphite</h3>
+                    <p>Le meilleur rapport performance / budget pour les maisons individuelles.</p>
+                    <ul class="solution-points">
+                        <li>Conductivité thermique λ 0,031 W/m.K</li>
+                        <li>Finitions enduit projeté, ribbé ou taloché</li>
+                        <li>Pose rapide sans nuisance intérieure</li>
+                    </ul>
+                    <div class="solution-footer"><span aria-hidden="true">⚡ Haute performance</span><span>jusqu’à -25 % sur les pertes</span></div>
+                </article>
+                <article class="solution-card" role="listitem">
+                    <h3>Laine de roche</h3>
+                    <p>Isolation minérale incombustible idéale pour le confort d’été.</p>
+                    <ul class="solution-points">
+                        <li>Excellente protection feu et acoustique</li>
+                        <li>Perméabilité à la vapeur pour murs anciens</li>
+                        <li>Compatible finitions enduit & bardage</li>
+                    </ul>
+                    <div class="solution-footer"><span aria-hidden="true">🔥 Sécurité renforcée</span><span>Euroclasse A1</span></div>
+                </article>
+                <article class="solution-card" role="listitem">
+                    <h3>Bardage ventilé</h3>
+                    <p>Signature architecturale contemporaine avec isolation continue.</p>
+                    <ul class="solution-points">
+                        <li>Large choix : bois, composite, stratifié</li>
+                        <li>Ossature aluminium ou bois selon le site</li>
+                        <li>Gestion optimale des condensations</li>
+                    </ul>
+                    <div class="solution-footer"><span aria-hidden="true">🏡 Esthétique durable</span><span>+10 % de valorisation</span></div>
+                </article>
+            </div>
+            <div class="solution-note">
+                <strong>Audit thermique offert pour chaque projet</strong>
+                <p>Remise d’un dossier complet avec coupes techniques, planning détaillé et estimation personnalisée des aides.</p>
+                <p>Un conseiller vous aide à arbitrer entre isolants biosourcés ou minéraux selon vos objectifs énergétiques et esthétiques.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="section" id="certifications" aria-label="Certifications et garanties">
+        <div class="container">
+            <h2>Des garanties professionnelles à chaque étape</h2>
+            <p class="lead" style="text-align:center;color:var(--muted);max-width:780px;margin:0 auto">Nous combinons certifications, assurances et procédures qualité pour sécuriser votre investissement et garantir un chantier irréprochable.</p>
+            <div class="cert-wrap">
+                <div class="cert-intro">
+                    <h3>Une gouvernance de projet hautement structurée</h3>
+                    <p>Notre bureau d’études interne suit un référentiel ISO inspiré et des check-lists chantier éprouvées.</p>
+                    <ul>
+                        <li>Chef de projet dédié du diagnostic à la réception.</li>
+                        <li>Comptes-rendus hebdomadaires et photos de suivi partagées.</li>
+                        <li>Contrôles qualité en 36 points avant livraison.</li>
+                    </ul>
+                    <p>Chaque intervenant est formé aux dernières exigences réglementaires (RE2020, fiches CEE, DTU 20.1) afin de livrer un résultat durable.</p>
+                </div>
+                <div class="cert-grid">
+                    <article class="cert-card"><strong>Certification RGE Qualibat</strong><p>Label indispensable pour déclencher les aides publiques et garantir la conformité énergétique de vos travaux.</p></article>
+                    <article class="cert-card"><strong>Assurances & conformité</strong><p>Garantie décennale, responsabilité civile professionnelle et respect des normes incendie & accessibilité.</p></article>
+                    <article class="cert-card"><strong>Traçabilité matériaux</strong><p>Fournisseurs français & européens certifiés, fiches techniques archivées et gestion optimisée des déchets.</p></article>
+                    <article class="cert-card"><strong>Chantiers sécurisés</strong><p>Plan de prévention, protection des abords, échafaudages vérifiés quotidiennement et nettoyage complet.</p></article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise -->
+    <section class="section" id="engagements" aria-label="Expertise France Isolation">
+        <div class="container">
+            <h2>Notre expertise à votre service</h2>
+            <p class="lead" style="text-align:center;color:var(--muted);max-width:720px;margin:0 auto">De l’étude thermique aux finitions, nous pilotons l’intégralité de votre projet avec des équipes internes et des matériaux durables.</p>
+            <div class="engagements-grid" role="list">
+                <article class="eng-card" role="listitem"><span class="icon" aria-hidden="true">🛠️</span><h3>Audit énergétique précis</h3><p>Analyse de votre bâti, mesure des déperditions et simulation des gains pour dimensionner la solution idéale.</p></article>
+                <article class="eng-card" role="listitem"><span class="icon" aria-hidden="true">📋</span><h3>Dossier administratif complet</h3><p>Constitution et dépôt des aides (MaPrimeRénov’, CEE, ANAH, collectivités) avec un suivi transparent.</p></article>
+                <article class="eng-card" role="listitem"><span class="icon" aria-hidden="true">🎯</span><h3>Finitions haut de gamme</h3><p>Pose réalisée par nos façadiers compagnons, finitions personnalisées : enduit, bardage bois, parement.</p></article>
+                <article class="eng-card" role="listitem"><span class="icon" aria-hidden="true">🔒</span><h3>Garanties & suivi durable</h3><p>Assurance décennale, service après-travaux et contrôle de performance 12 mois après la réception.</p></article>
+            </div>
+            <div class="metrics" aria-label="Chiffres clés France Isolation">
+                <div class="metric"><strong>95 %</strong><span>dossiers d’aides validés</span></div>
+                <div class="metric"><strong>72 h</strong><span>pour lancer votre chantier</span></div>
+                <div class="metric"><strong>18</strong><span>équipes façadiers internes</span></div>
+            </div>
+            <div class="testimonial" aria-label="Avis client">
+                <blockquote>“Equipe ponctuelle, chantier impeccable et économies au rendez-vous. Nous ressentons la différence dès l’hiver suivant.”</blockquote>
+                <cite>Claire M., Montreuil (93)</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avant / Après -->
+    <section class="section" id="avant-apres" aria-label="Comparatif avant et après travaux">
+        <div class="container compare-wrap">
+            <div class="compare-card" aria-describedby="compare-desc">
+                <div class="compare" id="beforeAfter" role="application" aria-label="Comparaison de façade" tabindex="0">
+                    <!-- AVANT -->
+                    <img src="images/france-ite2.jpg" alt="Chantier avant isolation extérieure" class="before" loading="lazy">
+                    <!-- APRÈS -->
+                    <img src="images/france-ite5.jpg" alt="Maison après isolation extérieure, façade terminée" class="after" loading="lazy">
+                    <div class="compare-handle" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="Position du curseur"></div>
+                </div>
+                <div class="compare-buttons" role="group" aria-label="Affichage rapide">
+                    <button type="button" data-pos="0">Avant</button>
+                    <button type="button" data-pos="50" class="active">50%</button>
+                    <button type="button" data-pos="100">Après</button>
+                </div>
+            </div>
+            <div class="compare-caption" id="compare-desc">
+                <h3>Avant / Après : le confort se voit immédiatement</h3>
+                <p>Glissez le curseur pour découvrir la transformation d’une maison isolée par l’extérieur. Les finitions haut de gamme protègent les murs, améliorent l’esthétique et suppriment les ponts thermiques.</p>
+                <p>Compatible clavier : utilisez les flèches pour ajuster la poignée, ou double-cliquez / double-tapez pour centrer.</p>
+                <div class="cta" style="margin-top:6px">
+                    <a href="/formulaires" data-route class="btn">Je veux le même résultat</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Méthode -->
+    <section class="section light" id="methode" aria-label="Notre méthode">
+        <div class="container">
+            <h2>Notre méthode — simple & efficace</h2>
+            <p class="lead" style="text-align:center;color:var(--muted);max-width:720px;margin:0 auto">Un interlocuteur unique, des étapes claires et des délais maîtrisés pour un chantier serein.</p>
+            <div class="method-grid">
+                <article class="step-card"><strong>1</strong><h3>Étude gratuite</h3><p>Visite technique, prise de mesures et recommandations personnalisées.</p></article>
+                <article class="step-card"><strong>2</strong><h3>Montage des aides</h3><p>Gestion complète des dossiers MaPrimeRénov’, CEE et aides locales.</p></article>
+                <article class="step-card"><strong>3</strong><h3>Pose & finitions</h3><p>Isolation performante, finitions esthétiques et suivi quotidien du chantier.</p></article>
+                <article class="step-card"><strong>4</strong><h3>Réception & conseils</h3><p>Contrôle qualité, explication des économies réalisées et recommandations d’entretien.</p></article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie -->
+    <section class="section" id="realisations" aria-label="Réalisations France Isolation">
+        <div class="container">
+            <h2>Nos réalisations en images</h2>
+            <p class="lead" style="text-align:center;color:var(--muted);max-width:720px;margin:0 auto">Découvrez des façades rénovées avec différentes finitions : enduit, bardage bois ou crépis projeté.</p>
+            <div class="gallery-grid" id="gallery" role="list">
+                <button class="gallery-item" role="listitem" data-img="https://images.unsplash.com/photo-1575517111478-7f6afd0973db?auto=format&fit=crop&w=1600&q=80" data-caption="Enduit minéral haute durabilité">
+                    <img src="https://images.unsplash.com/photo-1575517111478-7f6afd0973db?auto=format&fit=crop&w=800&q=70" alt="Façade isolée avec enduit minéral" loading="lazy">
+                    <span class="gallery-caption">Enduit minéral</span>
+                </button>
+                <button class="gallery-item" role="listitem" data-img="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1600&q=80" data-caption="Bardage bois sur ossature isolée">
+                    <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=70" alt="Isolation avec bardage bois" loading="lazy">
+                    <span class="gallery-caption">Bardage bois</span>
+                </button>
+                <button class="gallery-item" role="listitem" data-img="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80" data-caption="ITE finition grattée blanche">
+                    <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=70" alt="Façade claire rénovée" loading="lazy">
+                    <span class="gallery-caption">Finition grattée</span>
+                </button>
+                <button class="gallery-item" role="listitem" data-img="https://images.unsplash.com/photo-1529307474719-3d0c5aa2f653?auto=format&fit=crop&w=1600&q=80" data-caption="Isolation & modernisation complète">
+                    <img src="https://images.unsplash.com/photo-1529307474719-3d0c5aa2f653?auto=format&fit=crop&w=800&q=70" alt="Maison modernisée" loading="lazy">
+                    <span class="gallery-caption">Modernisation complète</span>
+                </button>
+            </div>
+        </div>
+        <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+            <figure>
+                <button type="button" aria-label="Fermer la galerie">×</button>
+                <img src="" alt="" id="lightboxImg">
+                <figcaption id="lightboxCaption"></figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- Formulaire -->
+    <section class="section" id="formulaire-detaille" aria-label="Formulaire d'étude gratuite">
+        <div class="container formwrap">
+            <div class="form-header">
+                <span class="badge">Étude gratuite & sans engagement</span>
+                <h2>Obtenir mon étude personnalisée</h2>
+                <p class="lead" style="color:var(--muted)">Un conseiller vous rappelle pour estimer vos aides et proposer une solution ITE sur-mesure.</p>
+            </div>
+
+            <div class="form-shell">
+                <div id="successPanel" class="success" role="status" aria-live="polite">
+                    <h3>✅ Demande envoyée</h3>
+                    <p>Merci ! Nous vous recontactons très vite.</p>
+                </div>
+
+                <div class="stepper" aria-hidden="true">
+                    <div class="bubble active">1</div>
+                    <div class="bubble">2</div>
+                </div>
+                <div class="step-title" id="stepTitle" aria-hidden="true"></div>
+
+                <form id="contactForm" novalidate>
+                    <!-- Honeypot anti-spam -->
+                    <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;height:0;width:0">
+
+                    <!-- Étape 1 -->
+                    <div class="step" data-step="1">
+                        <div class="form-grid">
+                            <div class="field">
+                                <label for="prenom">Prénom <span class="req">*</span></label>
+                                <input class="input" id="prenom" name="prenom" autocomplete="given-name" placeholder="Ex : Marie" required>
+                                <small class="error">Veuillez indiquer votre prénom.</small>
+                            </div>
+                            <div class="field">
+                                <label for="nom">Nom <span class="req">*</span></label>
+                                <input class="input" id="nom" name="nom" autocomplete="family-name" placeholder="Ex : Dupont" required>
+                                <small class="error">Veuillez indiquer votre nom.</small>
+                            </div>
+                            <div class="field">
+                                <label for="telephone">Téléphone <span class="req">*</span></label>
+                                <input class="input" id="telephone" name="telephone" inputmode="tel" placeholder="06 12 34 56 78" data-validate="tel" required>
+                                <small class="hint">Format : 10 chiffres. Espaces/points/tirets acceptés.</small>
+                                <small class="error">Numéro invalide.</small>
+                            </div>
+                            <div class="field">
+                                <label for="email">E-mail <span class="req">*</span></label>
+                                <input class="input" id="email" name="email" type="email" placeholder="exemple@mail.com" required>
+                                <small class="error">Adresse e-mail invalide.</small>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <button type="button" class="btn" id="nextBtn">Suivant →</button>
+                        </div>
+                    </div>
+
+                    <!-- Étape 2 -->
+                    <div class="step" data-step="2" hidden>
+                        <div class="form-grid">
+                            <div class="field">
+                                <label for="code_postal_full">Code postal <span class="req">*</span></label>
+                                <input class="input" id="code_postal_full" name="code_postal_full" inputmode="numeric" pattern="^[0-9]{5}$" maxlength="5" placeholder="75001" required>
+                                <small class="error">Code postal à 5 chiffres requis.</small>
+                            </div>
+                            <div class="field">
+                                <label for="type_chauffage">Type de chauffage <span class="req">*</span></label>
+                                <input class="input" id="type_chauffage" name="type_chauffage" placeholder="Gaz, Électrique, Fioul…" required>
+                                <small class="error">Veuillez indiquer votre chauffage actuel.</small>
+                            </div>
+                            <div class="field full checkbox-card">
+                                <input type="checkbox" id="owner" name="owner" required>
+                                <label for="owner">Je certifie être propriétaire d'une maison individuelle. <span class="req">*</span></label>
+                                <small class="error">Ce champ est requis.</small>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <button type="button" class="btn ghost" id="prevBtn2">← Retour</button>
+                            <button type="submit" class="btn" id="submitBtn">
+                                <span class="btn-label">Envoyer la demande</span>
+                                <span class="spinner" style="display:none" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <p class="hint" style="text-align:center;margin:6px 0 2px">
+                        Vos informations sont utilisées uniquement pour vous recontacter et établir votre étude.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section light" id="faq" aria-label="Questions fréquentes">
+        <div class="container">
+            <h2>Questions fréquentes sur l’ITE</h2>
+            <p class="lead" style="text-align:center;color:var(--muted);max-width:760px;margin:0 auto">Retrouvez les réponses aux interrogations les plus courantes avant de lancer vos travaux d’isolation par l’extérieur.</p>
+            <div class="faq-list">
+                <details><summary>L’ITE gêne-t-elle l’intérieur de ma maison ?</summary><p>L’isolation se fait intégralement à l’extérieur : aucune surface habitable n’est perdue et le chantier n’impose pas de déplacer vos meubles.</p></details>
+                <details><summary>Peut-on cumuler MaPrimeRénov’ avec d’autres aides ?</summary><p>Oui, MaPrimeRénov’, les CEE, les aides locales et parfois l’éco-PTZ sont cumulables. Nous montons l’ensemble des dossiers et vous guidons sur les justificatifs à fournir.</p></details>
+                <details><summary>Combien de temps dure un chantier d’isolation extérieure ?</summary><p>En moyenne entre 2 et 4 semaines selon la surface et les finitions choisies. Nous planifions les interventions pour limiter les nuisances et sécuriser les accès.</p></details>
+                <details><summary>Quelles sont les étapes après la visite technique ?</summary><p>Après validation du devis, nous préparons les dossiers d’aides, planifions le chantier, sécurisons le bâti et réalisons un contrôle qualité avant la réception officielle.</p></details>
+                <details><summary>Quand ressent-on les économies d’énergie ?</summary><p>Dès la première saison de chauffe ! Les murs restent chauds, la température est homogène et votre système de chauffage fonctionne moins longtemps.</p></details>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer role="contentinfo">
+    <div class="container">
+        <p>Zones d’intervention : 95, 78, 77, 91, 94, 93, 27, 28, 60, 02</p>
+        <p>© 2024 FRANCE ISOLATION — <a href="mentions-legales.html">Mentions légales</a> • <a href="politique-confidentialite.html">Politique de confidentialité</a></p>
+    </div>
+</footer>
+
+<script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbyY9ZLFDoGs4gQdQcfUk5gJVUbUgQnWqYGE8WgNT5CGz3yxvGSwCfOWzhePnp7uiFmJ/exec";
+
+    /* Mini router for pretty paths -> scroll to sections */
+    (function () {
+        const routes = {
+            "/": "#accueil",
+            "/aides": "#aides",
+            "/solutions": "#solutions",
+            "/certifications": "#certifications",
+            "/engagements": "#engagements",
+            "/realisations": "#realisations",
+            "/faq": "#faq",
+            "/formulaires": "#formulaire-detaille"
+        };
+
+        function goTo(path){
+            const target = routes[path]; if(!target) return;
+            const el = document.querySelector(target);
+            if (el) el.scrollIntoView({behavior:"smooth", block:"start"});
+        }
+
+        document.addEventListener("DOMContentLoaded", ()=> goTo(location.pathname));
+
+        document.addEventListener("click", (e)=>{
+            const a = e.target.closest("a[data-route]");
+            if(!a) return;
+            const url = new URL(a.href, location.origin);
+            if(routes[url.pathname]){
+                e.preventDefault();
+                history.pushState({}, "", url.pathname);
+                goTo(url.pathname);
+            }
+        });
+
+        window.addEventListener("popstate", ()=> goTo(location.pathname));
+    })();
+
+    // --- Navigation responsive ---
+    const navToggle = document.querySelector('.nav-toggle');
+    const primaryNav = document.getElementById('primaryNav');
+    const navLinks = primaryNav ? Array.from(primaryNav.querySelectorAll('a')) : [];
+    const navCta = document.querySelector('.nav-cta');
+
+    const closeNav = ()=>{ if(!primaryNav || !navToggle) return; primaryNav.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); };
+
+    navToggle?.addEventListener('click', ()=>{
+        if(!primaryNav) return;
+        const isOpen = primaryNav.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    [...navLinks, navCta].forEach(link=> link?.addEventListener('click', closeNav));
+
+    const topbar = document.querySelector('[data-topbar]');
+    const setTopbarState = ()=>{ if(!topbar) return; topbar.classList.toggle('scrolled', window.scrollY > 60); };
+    setTopbarState();
+    window.addEventListener('scroll', setTopbarState);
+
+    // --- Before/after slider ---
+    const compare = document.getElementById('beforeAfter');
+    const handle = compare?.querySelector('.compare-handle');
+    const beforeImg = compare?.querySelector('.before');
+    const afterImg = compare?.querySelector('.after');
+    const buttons = document.querySelectorAll('.compare-buttons button');
+    let currentPos = 50;
+    let lastTap = 0;
+
+    function setSlider(percent){
+        currentPos = Math.min(100, Math.max(0, percent));
+        if (!beforeImg || !handle || !afterImg) return;
+        beforeImg.style.clipPath = `inset(0 ${100-currentPos}% 0 0)`;
+        afterImg.style.clipPath = `inset(0 0 0 ${currentPos}%)`;
+        handle.style.left = `${currentPos}%`;
+        handle.setAttribute('aria-valuenow', String(Math.round(currentPos)));
+        buttons.forEach(btn=> btn.classList.toggle('active', Number(btn.dataset.pos) === Math.round(currentPos)));
+    }
+
+    if(compare && handle){
+        const rect = ()=> compare.getBoundingClientRect();
+        const updateFromClientX = (x)=>{
+            const bounds = rect();
+            const percent = ((x - bounds.left) / bounds.width) * 100;
+            setSlider(percent);
+        };
+
+        let dragging = false;
+        handle.addEventListener('pointerdown', (e)=>{
+            dragging = true;
+            handle.setPointerCapture(e.pointerId);
+            updateFromClientX(e.clientX);
+        });
+        handle.addEventListener('pointermove', (e)=>{
+            if(!dragging) return;
+            updateFromClientX(e.clientX);
+        });
+        handle.addEventListener('pointerup', ()=> dragging = false);
+        handle.addEventListener('lostpointercapture', ()=> dragging = false);
+
+        compare.addEventListener('click', (e)=>{
+            if(e.detail === 2){
+                setSlider(50);
+            }else{
+                updateFromClientX(e.clientX);
+            }
+        });
+
+        compare.addEventListener('pointerup', (e)=>{
+            const now = Date.now();
+            if(now - lastTap < 320){
+                setSlider(50);
+            }
+            lastTap = now;
+        });
+
+        compare.addEventListener('keydown', (e)=>{
+            const step = e.shiftKey ? 10 : 5;
+            if(e.key === 'ArrowLeft'){ e.preventDefault(); setSlider(currentPos - step); }
+            if(e.key === 'ArrowRight'){ e.preventDefault(); setSlider(currentPos + step); }
+            if(e.key === 'Home'){ e.preventDefault(); setSlider(0); }
+            if(e.key === 'End'){ e.preventDefault(); setSlider(100); }
+        });
+
+        handle.addEventListener('keydown', (e)=>{
+            const step = e.shiftKey ? 10 : 5;
+            if(e.key === 'ArrowLeft'){ e.preventDefault(); setSlider(currentPos - step); }
+            if(e.key === 'ArrowRight'){ e.preventDefault(); setSlider(currentPos + step); }
+            if(e.key === 'Home'){ e.preventDefault(); setSlider(0); }
+            if(e.key === 'End'){ e.preventDefault(); setSlider(100); }
+            if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); setSlider(50); }
+        });
+
+        buttons.forEach(btn=> btn.addEventListener('click', ()=> setSlider(Number(btn.dataset.pos))));
+        setSlider(50);
+    }
+
+    // --- Gallery lightbox ---
+    const gallery = document.getElementById('gallery');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = lightbox?.querySelector('button');
+    let lastFocus = null;
+
+    function openLightbox(src, caption, alt){
+        if(!lightbox || !lightboxImg) return;
+        lastFocus = document.activeElement;
+        lightboxImg.src = src;
+        lightboxImg.alt = alt;
+        lightboxCaption.textContent = caption || '';
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden','false');
+        lightboxClose?.focus();
+    }
+    function closeLightbox(){
+        if(!lightbox || !lightboxImg) return;
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden','true');
+        lightboxImg.src = '';
+        if(lastFocus) lastFocus.focus();
+    }
+
+    gallery?.addEventListener('click', (e)=>{
+        const btn = e.target.closest('.gallery-item');
+        if(!btn) return;
+        const src = btn.dataset.img;
+        const caption = btn.dataset.caption;
+        const img = btn.querySelector('img');
+        openLightbox(src, caption, img?.alt || '');
+    });
+    gallery?.addEventListener('keydown', (e)=>{
+        if(e.key === 'Enter' || e.key === ' '){
+            const btn = e.target.closest('.gallery-item');
+            if(btn){ e.preventDefault(); btn.click(); }
+        }
+    });
+    lightboxClose?.addEventListener('click', closeLightbox);
+    lightbox?.addEventListener('click', (e)=>{ if(e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && lightbox?.classList.contains('open')) closeLightbox(); });
+
+    // --- Form logic (stepper, validation, submit) ---
+    const form = document.getElementById('contactForm');
+    const steps = Array.from(document.querySelectorAll('.step'));
+    const bubbles = Array.from(document.querySelectorAll('.stepper .bubble'));
+    const title = document.getElementById('stepTitle');
+    const successPanel = document.getElementById('successPanel');
+
+    const nextBtn  = document.getElementById('nextBtn');
+    const prevBtn2 = document.getElementById('prevBtn2');
+    const submitBtn = document.getElementById('submitBtn');
+    const spinner   = submitBtn?.querySelector('.spinner');
+
+    let current = 0;
+
+    function showStep(i){
+        steps.forEach((s, idx)=> s.hidden = idx !== i);
+        bubbles.forEach((b, idx)=>{
+            b.classList.toggle('active', idx === i);
+            b.classList.toggle('done',   idx <  i);
+        });
+        if (title) title.textContent = (i===0) ? "Étape 1 sur 2 — Coordonnées" : "Étape 2 sur 2 — Projet";
+        current = i;
+        form.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+
+    function fieldValid(el){
+        const v = (el.value || '').trim();
+        if (el.type === 'checkbox') return el.checked;
+        if (el.dataset.validate === 'tel'){
+            const digits = v.replace(/\D/g,'');
+            return /^0[1-9]\d{8}$/.test(digits);
+        }
+        if (el.type === 'email') return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+        if (el.id === 'code_postal_full') return /^\d{5}$/.test(v);
+        return v.length > 0;
+    }
+
+    function validateStep(i){
+        const container = steps[i];
+        const inputs = Array.from(container.querySelectorAll('input[required]'));
+        let ok = true;
+        inputs.forEach(el=>{
+            const valid = fieldValid(el);
+            const wrap = el.closest('.field') || el.closest('.checkbox-card');
+            if (wrap) wrap.classList.toggle('invalid', !valid);
+            el.setAttribute('aria-invalid', String(!valid));
+            if (!valid && ok){ el.focus(); ok = false; }
+        });
+        return ok;
+    }
+
+    document.querySelectorAll('#contactForm input').forEach(el=>{
+        ['input','blur'].forEach(evt=>{
+            el.addEventListener(evt, ()=>{
+                const valid = fieldValid(el);
+                const wrap = el.closest('.field') || el.closest('.checkbox-card');
+                if (wrap) wrap.classList.toggle('invalid', !valid);
+                el.setAttribute('aria-invalid', String(!valid));
+            });
+        });
+    });
+
+    nextBtn?.addEventListener('click', ()=>{ if (validateStep(0)) showStep(1); });
+    prevBtn2?.addEventListener('click', ()=> showStep(0));
+    steps[0]?.addEventListener('keydown', (e)=>{
+        if (e.key === 'Enter'){ e.preventDefault(); if (validateStep(0)) showStep(1); }
+    });
+
+    form?.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        if (!validateStep(0) || !validateStep(1)) return;
+
+        const hp = form.querySelector('input[name="website"]')?.value.trim();
+        if (hp) return;
+
+        const data = Object.fromEntries(new FormData(form));
+        if (data.telephone) data.telephone = String(data.telephone).replace(/\D/g,'');
+
+        submitBtn.disabled = true;
+        if(spinner) spinner.style.display = 'inline-block';
+        try{
+            await fetch(scriptURL, {
+                method:'POST',
+                mode:'no-cors',
+                headers:{ 'Content-Type':'text/plain;charset=utf-8' },
+                body: JSON.stringify(data)
+            });
+
+            /* 🔔 Fire Google Ads conversion AFTER successful submit */
+            gtag_report_conversion();
+
+            form.reset();
+            document.querySelectorAll('.invalid').forEach(n=>n.classList.remove('invalid'));
+            successPanel.classList.add('show');
+            showStep(0);
+            successPanel.scrollIntoView({behavior:'smooth', block:'center'});
+        }catch(err){
+            alert('⚠️ Réseau indisponible. Vérifiez votre connexion.');
+        }finally{
+            submitBtn.disabled = false;
+            if(spinner) spinner.style.display = 'none';
+        }
+    });
+
+    showStep(0);
+</script>
+
+<!-- Structured data -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "name": "France Isolation",
+                "url": "https://franceisolation.fr",
+                "logo": "https://franceisolation.fr/images/france-isolation-logo.jpg",
+                "image": "https://franceisolation.fr/images/promo-froid.jpg",
+                "telephone": "+33 1 84 60 00 00",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Agence Île-de-France",
+                    "addressLocality": "Paris",
+                    "postalCode": "75000",
+                    "addressCountry": "FR"
+                },
+                "areaServed": ["Île-de-France", "Oise", "Eure", "Aisne"],
+                "priceRange": "€€",
+                "sameAs": [
+                    "https://www.facebook.com/",
+                    "https://www.linkedin.com/"
+                ],
+                "description": "Spécialiste de l'Isolation Thermique par l'Extérieur : étude gratuite, montage des aides et pose haut de gamme."
+            },
+            {
+                "@type": "WebSite",
+                "url": "https://franceisolation.fr",
+                "name": "France Isolation",
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://franceisolation.fr/?s={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                }
+            }
+        ]
+    }
+</script>
+</body>
+</html>
