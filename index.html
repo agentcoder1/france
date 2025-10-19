@@ -15,30 +15,13 @@
         gtag('js', new Date());
         gtag('config', 'AW-17635990909'); // unique
 
-        /**
-         * 🔔 Conversion Google Ads (après submit réussi)
-         * ⚠️ Remplacer le label par celui de votre action de conversion :
-         * format: 'AW-17635990909/XXXXXXXXXXX'
-         */
+        // 🔔 Conversion Google Ads (après submit réussi)
         const ADS_SEND_TO = 'AW-17635990909/SLScCLHWyq4bEP26v9lB';
-
         function gtag_report_conversion(url) {
             var callback = function () { if (typeof url !== 'undefined') window.location = url; };
-            gtag('event', 'conversion', {
-                send_to: ADS_SEND_TO,
-                value: 1.0,
-                currency: 'EUR',
-                event_callback: callback
-            });
-
-            // Optionnel : si un conteneur GTM écoute "conversion"
+            gtag('event', 'conversion', { send_to: ADS_SEND_TO, value: 1.0, currency: 'EUR', event_callback: callback });
             if (window.google_tag_manager && window.dataLayer) {
-                window.dataLayer.push({
-                    event: 'conversion',
-                    send_to: ADS_SEND_TO,
-                    value: 1,
-                    currency: 'EUR'
-                });
+                window.dataLayer.push({ event: 'conversion', send_to: ADS_SEND_TO, value: 1, currency: 'EUR' });
             }
             return false;
         }
@@ -46,11 +29,18 @@
 
     <style>
         :root{
+            /* Base palette */
             --bg:#f5f4ef; --surface:#ffffff; --card:#f3f2ea; --border:#d9d6c9;
             --text:#243127; --muted:#5e6f63; --brand:#618f72; --brand-dark:#3d7052;
             --accent:#d9b97a; --radius:16px; --shadow:0 14px 32px rgba(0,0,0,.07);
             --container:1120px; --error:#b42318; --ok:#1b7a50;
+
+            /* === CTA THEME (edit these 3 to recolor all CTAs) === */
+            --cta:#2563eb;        /* primary base (blue) */
+            --cta-dark:#1e40af;   /* darker shade */
+            --cta-text:#ffffff;   /* text on primary */
         }
+
         *,*::before,*::after{box-sizing:border-box}
         html{scroll-behavior:smooth}
         body{margin:0;background:radial-gradient(circle at 10% 10%,#ffffff 0%,#f5f4ef 55%,#ece9df 100%);color:var(--text);font:16px/1.6 "Segoe UI", Roboto, Arial, sans-serif}
@@ -110,14 +100,16 @@
         .hero-img img{width:100%;max-width:460px;border-radius:20px;box-shadow:0 18px 38px rgba(0,0,0,.12);margin-inline:auto;transition:transform .3s}
         .hero-img a:focus img,.hero-img a:hover img{transform:translateY(-4px)}
 
+        /* CTA Buttons (use --cta colors) */
         .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}
-        .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.85rem 1.35rem;border-radius:14px;font-weight:700;border:0;color:#fff;background:linear-gradient(135deg,var(--brand),var(--brand-dark));box-shadow:0 12px 26px rgba(61,112,82,.22);cursor:pointer;transition:transform .2s, box-shadow .2s}
-        .btn.secondary{background:#fff;color:var(--brand);border:1px solid var(--border);box-shadow:none}
-        .btn.ghost{background:#fff;color:var(--brand-dark);border:1px solid var(--border)}
-        .btn:hover,.btn:focus-visible{transform:translateY(-2px);box-shadow:0 12px 20px rgba(0,0,0,.12)}
-        .btn.secondary:hover,.btn.secondary:focus-visible{box-shadow:var(--shadow)}
+        .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.85rem 1.35rem;border-radius:14px;font-weight:700;border:0;color:var(--cta-text);background:linear-gradient(135deg,var(--cta),var(--cta-dark));box-shadow:0 12px 26px color-mix(in oklab, var(--cta-dark) 30%, transparent);cursor:pointer;transition:transform .2s, box-shadow .2s}
+        .btn.secondary{background:#fff;color:var(--cta);border:1px solid var(--cta);box-shadow:none}
+        .btn.ghost{background:#fff;color:var(--cta-dark);border:1px solid color-mix(in oklab, var(--cta-dark) 30%, var(--border))}
+        .btn:hover,.btn:focus-visible{transform:translateY(-2px);box-shadow:0 12px 24px color-mix(in oklab, var(--cta-dark) 46%, transparent)}
+        .btn.secondary:hover,.btn.secondary:focus-visible{box-shadow:0 10px 22px color-mix(in oklab, var(--cta) 20%, transparent)}
         .btn[disabled]{opacity:.7;cursor:not-allowed;transform:none;box-shadow:none}
-        .btn.nav-cta{padding:.7rem 1.1rem;border-radius:12px;font-size:.78rem;box-shadow:0 10px 20px rgba(61,112,82,.18)}
+        .btn.nav-cta{padding:.7rem 1.1rem;border-radius:12px;font-size:.78rem}
+
         .badges{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;color:var(--brand-dark);font-weight:600}
         .badge-pill{background:var(--card);padding:.35rem .8rem;border-radius:999px;border:1px solid var(--border)}
 
@@ -194,14 +186,13 @@
         .compare-card{background:var(--surface);border-radius:24px;border:1px solid rgba(217,214,201,.9);box-shadow:var(--shadow);overflow:hidden;position:relative}
         .compare{position:relative;aspect-ratio:16/9;overflow:hidden}
         .compare img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-        /* initial states are overridden by JS; keep them neutral */
         .compare .after{clip-path:inset(0 0 0 0)}
         .compare .before{clip-path:inset(0 50% 0 0)}
         .compare-handle{position:absolute;top:0;bottom:0;left:50%;width:4px;background:rgba(255,255,255,.7);box-shadow:0 0 0 1px rgba(0,0,0,.1);cursor:ew-resize;display:flex;align-items:center;justify-content:center}
-        .compare-handle::after{content:"";width:32px;height:32px;border-radius:50%;background:var(--brand);border:2px solid #fff;box-shadow:0 6px 18px rgba(0,0,0,.2)}
+        .compare-handle::after{content:"";width:32px;height:32px;border-radius:50%;background:var(--cta);border:2px solid #fff;box-shadow:0 6px 18px rgba(0,0,0,.2)}
         .compare-buttons{display:flex;gap:12px;margin:18px auto 22px;justify-content:center;flex-wrap:wrap}
         .compare-buttons button{padding:.55rem 1rem;border-radius:999px;border:1px solid var(--border);background:var(--card);cursor:pointer;font-weight:600;color:var(--brand-dark)}
-        .compare-buttons button.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+        .compare-buttons button.active{background:var(--cta);color:#fff;border-color:var(--cta)}
         .compare-caption{padding:24px;display:grid;gap:10px}
         .compare-caption p{color:var(--muted)}
 
@@ -241,7 +232,7 @@
         form#contactForm{display:grid;gap:18px;max-width:760px;margin:auto}
         .stepper{display:flex;gap:12px;justify-content:center;margin:4px 0 18px}
         .bubble{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--border);background:#fff;color:var(--muted);font-weight:700}
-        .bubble.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+        .bubble.active{background:var(--cta);color:#fff;border-color:var(--cta)}
         .bubble.done{background:var(--brand-dark);color:#fff;border-color:var(--brand-dark)}
         .step-title{display:none}
         .form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
@@ -268,6 +259,27 @@
 
         footer{padding:36px 0 42px;color:var(--muted)}
         footer a{color:var(--brand-dark)}
+
+        /* Sticky CTA Bar */
+        .sticky-cta { position: sticky; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,.98); border-top: 1px solid var(--border); box-shadow: 0 -10px 22px rgba(0,0,0,.06); z-index: 40; }
+        .sticky-cta__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; }
+        .sticky-cta__text { display:grid; gap:2px; }
+        .sticky-cta__text strong { color: var(--brand-dark); }
+        .sticky-cta__text span { color: var(--muted); font-weight:600; font-size:.92rem; }
+        .sticky-cta__actions { display:flex; gap:10px; flex-wrap:wrap; }
+        #stickyCta .btn{ background: linear-gradient(135deg, var(--cta), var(--cta-dark)); color: var(--cta-text); border: 0; }
+        #stickyCta .btn.secondary{ background: #fff; color: var(--cta); border: 1px solid var(--cta); }
+        @media(max-width:720px){ .sticky-cta__inner { flex-direction: column; align-items: stretch; } .sticky-cta__actions .btn { width: 100%; } }
+
+        /* Ads Smart Banner */
+        .ads-banner{ position: sticky; top: 0; z-index: 45; background: linear-gradient(90deg, rgba(97,143,114,.12), rgba(97,143,114,.05)); border-bottom: 1px solid rgba(97,143,114,.25); }
+        .ads-banner__inner{ display:flex; align-items:center; gap:10px; padding: 8px 0; color: var(--brand-dark); font-weight:600; flex-wrap: wrap; }
+        .ads-banner__cta{ margin-left: auto; background:#fff; border:1px solid var(--cta); color: var(--cta-dark); padding:.45rem .8rem; border-radius:999px; font-weight:700; }
+        @media(max-width:720px){ .ads-banner__inner{ gap:8px; } .ads-banner__cta{ margin-left: 0; } }
+
+        /* Focus pulse on form */
+        @keyframes pulseFocus { 0%{ box-shadow:0 0 0 0 rgba(97,143,114,.35);} 70%{ box-shadow:0 0 0 12px rgba(97,143,114,0);} 100%{ box-shadow:0 0 0 0 rgba(97,143,114,0);} }
+        #formulaire-detaille:target .formwrap, .formwrap.highlight { animation: pulseFocus 1.5s ease-out 0s 2; scroll-margin-top: 80px; }
     </style>
 </head>
 <body>
@@ -294,7 +306,7 @@
             <a href="/faq" data-route>FAQ</a>
         </nav>
         <div class="nav-contact">
-            <a class="nav-phone" href="tel:+33184801245"><span aria-hidden="true">📞</span> 07 68 94 20 72</a>
+            <a class="nav-phone" href="tel:+33768942072"><span aria-hidden="true">📞</span> 07 68 94 20 72</a>
             <a href="/formulaires" data-route class="btn nav-cta">Demander mon étude</a>
         </div>
     </div>
@@ -315,9 +327,11 @@
                     <span class="badge-pill">Étude 100% gratuite</span>
                 </div>
 
+                <!-- Enhanced CTAs -->
                 <div class="cta" role="group" aria-label="Appels à l'action">
-                    <a href="/formulaires" data-route class="btn">Simuler mes aides</a>
-                    <a href="/aides" data-route class="btn secondary">Voir les aides disponibles</a>
+                    <a href="/formulaires" data-route class="btn" data-cta="hero_primary">Estimer mes aides en 60s</a>
+                    <a href="#formulaire-detaille" class="btn secondary" data-jump data-cta="hero_secondary">Obtenir mon étude gratuite</a>
+                    <a href="#solutions" class="btn ghost" data-jump data-cta="hero_ghost">Trouver ma solution ITE</a>
                 </div>
 
                 <div class="advantages" aria-label="Avantages de l’ITE">
@@ -479,7 +493,7 @@
                 <p>Glissez le curseur pour découvrir la transformation d’une maison isolée par l’extérieur. Les finitions haut de gamme protègent les murs, améliorent l’esthétique et suppriment les ponts thermiques.</p>
                 <p>Compatible clavier : utilisez les flèches pour ajuster la poignée, ou double-cliquez / double-tapez pour centrer.</p>
                 <div class="cta" style="margin-top:6px">
-                    <a href="/formulaires" data-route class="btn">Je veux le même résultat</a>
+                    <a href="#formulaire-detaille" class="btn" data-jump data-cta="before_after_cta">Je veux le même résultat</a>
                 </div>
             </div>
         </div>
@@ -550,7 +564,7 @@
                             </div>
                         </div>
                         <div class="actions">
-                            <button type="button" class="btn" id="nextBtn">Suivant →</button>
+                            <button type="button" class="btn" id="nextBtn" data-cta="form_next">Suivant →</button>
                         </div>
                     </div>
 
@@ -572,11 +586,21 @@
                                 <label for="owner">Je certifie être propriétaire d'une maison individuelle. <span class="req">*</span></label>
                                 <small class="error">Ce champ est requis.</small>
                             </div>
+
+                            <!-- Champs cachés pour UTM / source -->
+                            <input type="hidden" name="utm_source">
+                            <input type="hidden" name="utm_medium">
+                            <input type="hidden" name="utm_campaign">
+                            <input type="hidden" name="utm_term">
+                            <input type="hidden" name="utm_content">
+                            <input type="hidden" name="gclid">
+                            <input type="hidden" name="referrer">
+                            <input type="hidden" name="landing_path">
                         </div>
                         <div class="actions">
                             <button type="button" class="btn ghost" id="prevBtn2">← Retour</button>
-                            <button type="submit" class="btn" id="submitBtn">
-                                <span class="btn-label">Envoyer la demande</span>
+                            <button type="submit" class="btn" id="submitBtn" data-cta="form_submit">
+                                <span class="btn-label">Envoyer ma demande →</span>
                                 <span class="spinner" style="display:none" aria-hidden="true"></span>
                             </button>
                         </div>
@@ -612,6 +636,29 @@
         <p>© 2024 FRANCE ISOLATION — <a href="mentions-legales.html">Mentions légales</a> • <a href="politique-confidentialite.html">Politique de confidentialité</a></p>
     </div>
 </footer>
+
+<!-- Sticky CTA Bar -->
+<div class="sticky-cta" id="stickyCta" role="region" aria-label="Barre d'action rapide" hidden>
+    <div class="sticky-cta__inner container">
+        <div class="sticky-cta__text">
+            <strong>Isolation extérieure — Aides disponibles</strong>
+            <span>Estimation gratuite & rappel sous 24h</span>
+        </div>
+        <div class="sticky-cta__actions">
+            <a href="#formulaire-detaille" class="btn" data-jump data-cta="sticky_primary">Obtenir mon étude</a>
+            <a href="tel:+33768942072" class="btn secondary" data-cta="sticky_call">📞 Appeler: 07 68 94 20 72</a>
+        </div>
+    </div>
+</div>
+
+<!-- Ads Smart Banner (shows if gclid/utm present) -->
+<div class="ads-banner" id="adsBanner" role="status" aria-live="polite" hidden>
+    <div class="ads-banner__inner container">
+        <span>Bienvenue 👋 Vous arrivez depuis une annonce — </span>
+        <strong>Commencez votre estimation gratuite ci-dessous.</strong>
+        <a href="#formulaire-detaille" class="ads-banner__cta" data-jump data-cta="ads_banner">Aller au formulaire</a>
+    </div>
+</div>
 
 <script>
     const scriptURL = "https://script.google.com/macros/s/AKfycbyY9ZLFDoGs4gQdQcfUk5gJVUbUgQnWqYGE8WgNT5CGz3yxvGSwCfOWzhePnp7uiFmJ/exec";
@@ -749,8 +796,69 @@
         });
 
         buttons.forEach(btn=> btn.addEventListener('click', ()=> setSlider(Number(btn.dataset.pos))));
-        setSlider(50); // start centered; use setSlider(0) to start on "Avant"
+        setSlider(50); // start centered; set to 0 for "Avant"
     }
+
+    // ---- CTA Enhancements & Tracking ----
+    function hasAdsParams() {
+        const p = new URLSearchParams(location.search);
+        return p.has('gclid') || p.has('utm_source') || p.has('utm_campaign') || p.has('utm_term') || p.has('utm_medium');
+    }
+
+    // Smooth jump for elements with [data-jump]
+    document.querySelectorAll('[data-jump]').forEach(a=>{
+        a.addEventListener('click', (e)=>{
+            const href = a.getAttribute('href') || '';
+            if(href.startsWith('#')){
+                e.preventDefault();
+                const el = document.querySelector(href);
+                if(el){
+                    el.scrollIntoView({behavior:'smooth', block:'start'});
+                    const wrap = el.querySelector('.formwrap') || el;
+                    wrap.classList.add('highlight');
+                    setTimeout(()=> wrap.classList.remove('highlight'), 2200);
+                }
+            }
+        });
+    });
+
+    const sticky = document.getElementById('stickyCta');
+    const adsBanner = document.getElementById('adsBanner');
+    const formSection = document.getElementById('formulaire-detaille');
+
+    function updateSticky() {
+        if(!sticky) return;
+        const threshold = 400; // px
+        const nearForm = formSection ? formSection.getBoundingClientRect().top < 300 : false;
+        if(window.scrollY > threshold && !nearForm){
+            sticky.hidden = false;
+        } else if(!hasAdsParams()){
+            sticky.hidden = true;
+        }
+    }
+
+    if (hasAdsParams()) {
+        if (adsBanner) adsBanner.hidden = false;
+        if (sticky) sticky.hidden = false;
+        setTimeout(()=>{
+            if (formSection) {
+                formSection.scrollIntoView({behavior:'smooth', block:'start'});
+                const wrap = formSection.querySelector('.formwrap') || formSection;
+                wrap.classList.add('highlight');
+                setTimeout(()=> wrap.classList.remove('highlight'), 2200);
+            }
+        }, 1200);
+    }
+
+    window.addEventListener('scroll', updateSticky);
+    updateSticky();
+
+    function trackCtaClick(label){
+        try{ gtag('event', 'cta_click', { send_to: ADS_SEND_TO, label }); }catch(_){}
+    }
+    document.querySelectorAll('[data-cta]').forEach(el=>{
+        el.addEventListener('click', ()=> trackCtaClick(el.getAttribute('data-cta') || 'cta'));
+    });
 
     // --- Form logic (stepper, validation, submit) ---
     const form = document.getElementById('contactForm');
@@ -820,6 +928,20 @@
         if (e.key === 'Enter'){ e.preventDefault(); if (validateStep(0)) showStep(1); }
     });
 
+    // Inject UTM params into hidden fields on load
+    (function fillUTM(){
+        const params = new URLSearchParams(location.search);
+        const fields = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid'];
+        fields.forEach(f=>{
+            const el = form.querySelector(`input[name="${f}"]`);
+            if (el) el.value = params.get(f) || '';
+        });
+        const ref = form.querySelector('input[name="referrer"]');
+        if (ref) ref.value = document.referrer || '';
+        const land = form.querySelector('input[name="landing_path"]');
+        if (land) land.value = location.pathname + location.search;
+    })();
+
     form?.addEventListener('submit', async (e)=>{
         e.preventDefault();
         if (!validateStep(0) || !validateStep(1)) return;
@@ -840,7 +962,6 @@
                 body: JSON.stringify(data)
             });
 
-            /* 🔔 Conversion Google Ads APRÈS envoi réussi */
             gtag_report_conversion();
 
             form.reset();
@@ -870,7 +991,7 @@
                 "url": "https://franceisolation.fr",
                 "logo": "https://franceisolation.fr/images/france-isolation-logo.jpg",
                 "image": "https://franceisolation.fr/images/promo-froid.jpg",
-                "telephone": "+33 1 84 60 00 00",
+                "telephone": "+33 7 68 94 20 72",
                 "address": {
                     "@type": "PostalAddress",
                     "streetAddress": "Agence Île-de-France",
