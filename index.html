@@ -194,6 +194,7 @@
         .compare-card{background:var(--surface);border-radius:24px;border:1px solid rgba(217,214,201,.9);box-shadow:var(--shadow);overflow:hidden;position:relative}
         .compare{position:relative;aspect-ratio:16/9;overflow:hidden}
         .compare img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+        /* initial states are overridden by JS; keep them neutral */
         .compare .after{clip-path:inset(0 0 0 0)}
         .compare .before{clip-path:inset(0 50% 0 0)}
         .compare-handle{position:absolute;top:0;bottom:0;left:50%;width:4px;background:rgba(255,255,255,.7);box-shadow:0 0 0 1px rgba(0,0,0,.1);cursor:ew-resize;display:flex;align-items:center;justify-content:center}
@@ -671,7 +672,7 @@
     setTopbarState();
     window.addEventListener('scroll', setTopbarState);
 
-    // --- Before/after slider ---
+    // --- Before/after slider (FIXED LOGIC) ---
     const compare = document.getElementById('beforeAfter');
     const handle = compare?.querySelector('.compare-handle');
     const beforeImg = compare?.querySelector('.before');
@@ -683,8 +684,11 @@
     function setSlider(percent){
         currentPos = Math.min(100, Math.max(0, percent));
         if (!beforeImg || !handle || !afterImg) return;
-        beforeImg.style.clipPath = `inset(0 ${100-currentPos}% 0 0)`;
-        afterImg.style.clipPath = `inset(0 0 0 ${currentPos}%)`;
+
+        // ✅ 0% = Avant (Before full), 100% = Après (After full)
+        beforeImg.style.clipPath = `inset(0 0 0 ${currentPos}%)`;         // clip left side of BEFORE
+        afterImg.style.clipPath  = `inset(0 ${100 - currentPos}% 0 0)`;   // clip right side of AFTER
+
         handle.style.left = `${currentPos}%`;
         handle.setAttribute('aria-valuenow', String(Math.round(currentPos)));
         buttons.forEach(btn=> btn.classList.toggle('active', Number(btn.dataset.pos) === Math.round(currentPos)));
@@ -745,7 +749,7 @@
         });
 
         buttons.forEach(btn=> btn.addEventListener('click', ()=> setSlider(Number(btn.dataset.pos))));
-        setSlider(50);
+        setSlider(50); // start centered; use setSlider(0) to start on "Avant"
     }
 
     // --- Form logic (stepper, validation, submit) ---
@@ -829,7 +833,7 @@
         submitBtn.disabled = true;
         if(spinner) spinner.style.display = 'inline-block';
         try{
-            await fetch("https://script.google.com/macros/s/AKfycbyY9ZLFDoGs4gQdQcfUk5gJVUbUgQnWqYGE8WgNT5CGz3yxvGSwCfOWzhePnp7uiFmJ/exec", {
+            await fetch(scriptURL, {
                 method:'POST',
                 mode:'no-cors',
                 headers:{ 'Content-Type':'text/plain;charset=utf-8' },
