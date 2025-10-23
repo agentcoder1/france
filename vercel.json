@@ -1,15 +1,11 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": false,
   "rewrites": [
-    { "source": "/",                 "destination": "/index.html" },
-    { "source": "/aides",            "destination": "/index.html" },
-    { "source": "/solutions",        "destination": "/index.html" },
-    { "source": "/certifications",   "destination": "/index.html" },
-    { "source": "/engagements",      "destination": "/index.html" },
-    { "source": "/realisations",     "destination": "/index.html" },
-    { "source": "/faq",              "destination": "/index.html" },
-    { "source": "/formulaires",      "destination": "/index.html" },
-
-    { "source": "/mentions-legales",         "destination": "/mentions-legales.html" },
-    { "source": "/politique-confidentialite","destination": "/politique-confidentialite.html" }
+    { "source": "/", "destination": "/index.html" },
+    {
+      "source": "/(aides|solutions|certifications|engagements|realisations|faq|formulaires|mentions-legales|politique-confidentialite)",
+      "destination": "/index.html"
+    }
   ]
 }
