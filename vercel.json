@@ -2,10 +2,6 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/", "destination": "/index.html" },
-    {
-      "source": "/(aides|solutions|certifications|engagements|realisations|faq|formulaires|mentions-legales|politique-confidentialite)",
-      "destination": "/index.html"
-    }
+    { "source": "/(aides|solutions|certifications|engagements|realisations|faq|formulaires|mentions-legales|politique-confidentialite)", "destination": "/" }
   ]
 }
