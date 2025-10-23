@@ -581,10 +581,21 @@
                                 <input class="input" id="type_chauffage" name="type_chauffage" placeholder="Gaz, Électrique, Fioul…" required>
                                 <small class="error">Veuillez indiquer votre chauffage actuel.</small>
                             </div>
+
                             <div class="field full checkbox-card">
                                 <input type="checkbox" id="owner" name="owner" required>
                                 <label for="owner">Je certifie être propriétaire d'une maison individuelle. <span class="req">*</span></label>
                                 <small class="error">Ce champ est requis.</small>
+                            </div>
+
+                            <!-- ✅ Consentement RGPD -->
+                            <div class="field full checkbox-card">
+                                <input type="checkbox" id="consent_rgpd" name="consent_rgpd" required>
+                                <label for="consent_rgpd">
+                                    J’accepte que mes données soient utilisées pour être recontacté(e) par des partenaires dans le cadre de ma demande,
+                                    conformément à la <a href="/politique-confidentialite" data-route>Politique de confidentialité</a>. <span class="req">*</span>
+                                </label>
+                                <small class="error">Le consentement est requis.</small>
                             </div>
 
                             <!-- Champs cachés pour UTM / source -->
@@ -628,12 +639,108 @@
             </div>
         </div>
     </section>
+
+    <!-- Mentions légales -->
+    <section class="section" id="mentions-legales" aria-label="Mentions légales" hidden>
+        <div class="container">
+            <h2>Mentions légales</h2>
+            <div class="lead" style="color:var(--muted);max-width:820px;margin:0 auto 18px;text-align:center">
+                Informations relatives à l’éditeur, l’hébergement et l’objet du site.
+            </div>
+
+            <article class="formwrap" style="padding:0">
+                <div class="form-shell" style="padding:24px">
+                    <h3>Éditeur du site</h3>
+                    <p>Le site <strong>FranceIsolation.online</strong> est édité par <strong>Medyas</strong>, entreprise individuelle immatriculée au RCS de Paris sous le numéro <strong>SIRET 853 353 464 00011</strong>, dont le siège social est situé à <strong>19 rue du Mail, 75002 Paris</strong>.<br>
+                        Email : <a href="mailto:agencemedyas@gmail.com">agencemedyas@gmail.com</a></p>
+
+                    <h3 style="margin-top:16px">Hébergement</h3>
+                    <p>Le site est hébergé par <strong>Vercel</strong>.</p>
+
+                    <h3 style="margin-top:16px">Objet du site</h3>
+                    <p>Le site <strong>FranceIsolation.online</strong> est une plateforme de mise en relation exploitée par Medyas, société spécialisée dans la génération de prospects et le marketing digital dans le domaine des énergies et de la rénovation énergétique.</p>
+                    <p>L’objectif du site est de mettre en relation les particuliers souhaitant réaliser des travaux d’isolation avec des entreprises partenaires certifiées RGE, sélectionnées pour leur sérieux et leur conformité réglementaire.</p>
+                    <p><strong>Medyas n’exécute pas les travaux</strong> et agit uniquement en tant qu’intermédiaire marketing.</p>
+
+                    <h3 style="margin-top:16px">Propriété intellectuelle</h3>
+                    <p>Tous les contenus (textes, images, logos, graphismes, vidéos, icônes, etc.) présents sur le site sont la propriété exclusive de Medyas, sauf mention contraire. Toute reproduction, distribution, modification ou utilisation sans autorisation écrite préalable est strictement interdite.</p>
+
+                    <h3 style="margin-top:16px">Responsabilité</h3>
+                    <p>Les informations fournies sur ce site ont une vocation informative et indicative. Medyas ne saurait être tenue responsable des prestations réalisées par les entreprises partenaires, ni des conséquences liées à une mauvaise interprétation des informations du site. Chaque entreprise partenaire reste seule responsable de ses engagements et de la qualité de ses prestations.</p>
+
+                    <h3 style="margin-top:16px">Données personnelles</h3>
+                    <p>Les données collectées via le formulaire de contact ont pour objectif de mettre en relation les utilisateurs avec un ou plusieurs partenaires qualifiés dans le domaine de la rénovation énergétique. Ces données sont transmises uniquement aux partenaires concernés, dans le respect du RGPD. Pour plus d’informations, consultez notre <a href="/politique-confidentialite" data-route>Politique de confidentialité</a>.</p>
+
+                    <h3 style="margin-top:16px">Contact</h3>
+                    <p>Pour toute question relative au site, à vos données ou à nos services : 📩 <a href="mailto:agencemedyas@gmail.com">agencemedyas@gmail.com</a></p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Politique de confidentialité -->
+    <section class="section light" id="politique-confidentialite" aria-label="Politique de confidentialité" hidden>
+        <div class="container">
+            <h2>Politique de confidentialité</h2>
+            <div class="lead" style="color:var(--muted);max-width:820px;margin:0 auto 18px;text-align:center">
+                Détails sur la collecte, l’usage et la protection de vos données personnelles (RGPD).
+            </div>
+
+            <article class="formwrap" style="padding:0">
+                <div class="form-shell" style="padding:24px">
+                    <h3>1. Responsable du traitement</h3>
+                    <p>Le responsable du traitement est <strong>Medyas</strong>, entreprise immatriculée sous le numéro <strong>SIRET 853 353 464 00011</strong>, éditrice du site <strong>FranceIsolation.online</strong>.<br>
+                        📧 Contact : <a href="mailto:agencemedyas@gmail.com">agencemedyas@gmail.com</a></p>
+
+                    <h3 style="margin-top:16px">2. Données collectées</h3>
+                    <ul>
+                        <li>Nom et prénom</li>
+                        <li>Adresse e-mail</li>
+                        <li>Numéro de téléphone</li>
+                        <li>Code postal</li>
+                        <li>Informations relatives au logement ou au projet d’isolation</li>
+                    </ul>
+
+                    <h3 style="margin-top:16px">3. Finalité du traitement</h3>
+                    <ul>
+                        <li>Mettre en relation l’utilisateur avec des entreprises partenaires qualifiées dans le domaine de la rénovation énergétique ;</li>
+                        <li>Permettre à ces partenaires de vous recontacter pour établir un devis ;</li>
+                        <li>Réaliser des statistiques anonymisées d’activité marketing et de performance des campagnes.</li>
+                    </ul>
+
+                    <h3 style="margin-top:16px">4. Base légale du traitement</h3>
+                    <p>Le traitement repose sur le <strong>consentement explicite</strong> de l’utilisateur, donné en cochant la case d’acceptation lors de l’envoi du formulaire.</p>
+
+                    <h3 style="margin-top:16px">5. Transmission des données</h3>
+                    <p>Vos données peuvent être transmises à des partenaires commerciaux de Medyas, exclusivement dans le but de répondre à votre demande. Aucune donnée n’est cédée ou vendue à des tiers non autorisés à des fins commerciales ou publicitaires. Les partenaires s’engagent à respecter les réglementations en vigueur, notamment le RGPD.</p>
+
+                    <h3 style="margin-top:16px">6. Durée de conservation</h3>
+                    <p>Les données personnelles sont conservées pour une durée maximale de <strong>12 mois</strong> à compter du dernier contact, sauf demande de suppression préalable ou obligation légale contraire.</p>
+
+                    <h3 style="margin-top:16px">7. Vos droits</h3>
+                    <p>Conformément au RGPD, vous disposez des droits suivants : <em>accès</em>, <em>rectification</em>, <em>opposition</em>, <em>effacement</em>. Pour les exercer, écrivez à : <a href="mailto:agencemedyas@gmail.com">agencemedyas@gmail.com</a></p>
+
+                    <h3 style="margin-top:16px">8. Sécurité des données</h3>
+                    <p>Medyas met en œuvre toutes les mesures nécessaires (techniques et organisationnelles) pour assurer la confidentialité et la sécurité de vos données personnelles.</p>
+
+                    <h3 style="margin-top:16px">9. Cookies</h3>
+                    <p>Le site utilise des cookies afin d’améliorer la navigation et de mesurer la fréquentation. Vous pouvez à tout moment configurer votre navigateur pour refuser les cookies.</p>
+
+                    <h3 style="margin-top:16px">10. Contact</h3>
+                    <p>Pour toute question relative à cette politique ou à vos données personnelles : 📩 <a href="mailto:agencemedyas@gmail.com">agencemedyas@gmail.com</a></p>
+                </div>
+            </article>
+        </div>
+    </section>
 </main>
 
 <footer role="contentinfo">
     <div class="container">
         <p>Zones d’intervention : 95, 78, 77, 91, 94, 93, 27, 28, 60, 02</p>
-        <p>© 2024 FRANCE ISOLATION — <a href="mentions-legales.html">Mentions légales</a> • <a href="politique-confidentialite.html">Politique de confidentialité</a></p>
+        <p>© 2024 FRANCE ISOLATION —
+            <a href="/mentions-legales" data-route>Mentions légales</a> •
+            <a href="/politique-confidentialite" data-route>Politique de confidentialité</a>
+        </p>
     </div>
 </footer>
 
@@ -673,13 +780,25 @@
             "/engagements": "#engagements",
             "/realisations": "#realisations",
             "/faq": "#faq",
-            "/formulaires": "#formulaire-detaille"
+            "/formulaires": "#formulaire-detaille",
+            // NEW legal pages
+            "/mentions-legales": "#mentions-legales",
+            "/politique-confidentialite": "#politique-confidentialite"
         };
 
+        function showSectionById(id){
+            // Unhide the target section if it was hidden
+            const el = document.querySelector(id);
+            if(!el) return;
+            if(el.hasAttribute('hidden')) el.removeAttribute('hidden');
+            // Scroll to the section
+            el.scrollIntoView({behavior:"smooth", block:"start"});
+        }
+
         function goTo(path){
-            const target = routes[path]; if(!target) return;
-            const el = document.querySelector(target);
-            if (el) el.scrollIntoView({behavior:"smooth", block:"start"});
+            const target = routes[path];
+            if(!target) return;
+            showSectionById(target);
         }
 
         document.addEventListener("DOMContentLoaded", ()=> goTo(location.pathname));
@@ -854,8 +973,7 @@
     updateSticky();
 
     function trackCtaClick(label){
-        try{ gtag('event', 'cta_click', { send_to: ADS_SEND_TO, label }); }catch(_){}
-    }
+        try{ gtag('event', 'cta_click', { send_to: ADS_SEND_TO, label }); }catch(_){}}
     document.querySelectorAll('[data-cta]').forEach(el=>{
         el.addEventListener('click', ()=> trackCtaClick(el.getAttribute('data-cta') || 'cta'));
     });
@@ -893,7 +1011,7 @@
             return /^0[1-9]\d{8}$/.test(digits);
         }
         if (el.type === 'email') return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-        if (el.id === 'code_postal_full') return /^\d{5}$/.test(v);
+        if (el.id === 'code_postal_full') return /^(\d{5})$/.test(v);
         return v.length > 0;
     }
 
@@ -988,9 +1106,9 @@
             {
                 "@type": "Organization",
                 "name": "France Isolation",
-                "url": "https://franceisolation.fr",
-                "logo": "https://franceisolation.fr/images/france-isolation-logo.jpg",
-                "image": "https://franceisolation.fr/images/promo-froid.jpg",
+                "url": "https://franceisolation.online",
+                "logo": "https://franceisolation.online/images/france-isolation-logo.jpg",
+                "image": "https://franceisolation.online/images/promo-froid.jpg",
                 "telephone": "+33 7 68 94 20 72",
                 "address": {
                     "@type": "PostalAddress",
@@ -1009,11 +1127,11 @@
             },
             {
                 "@type": "WebSite",
-                "url": "https://franceisolation.fr",
+                "url": "https://franceisolation.online",
                 "name": "France Isolation",
                 "potentialAction": {
                     "@type": "SearchAction",
-                    "target": "https://franceisolation.fr/?s={search_term_string}",
+                    "target": "https://franceisolation.online/?s={search_term_string}",
                     "query-input": "required name=search_term_string"
                 }
             }
